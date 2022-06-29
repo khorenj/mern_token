@@ -1,0 +1,58 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-content {
+    min-height: 100%;
+
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -50px;
+}
+footer,
+.push {
+    height: 50px;
+}
+
+input.yellow-input{
+    border-bottom: 1px solid #fff !important;
+    box-shadow: 0 1px 0 0 #fff !important;
+}
+
+input.yellow-input + label{
+    color: #ffffff !important;
+}
+
+input.yellow-input:focus + label{
+    color: #ffeb3b !important;
+}
+
+input.yellow-input:focus{
+    border-bottom: 1px solid #ffeb3b !important;
+    box-shadow: 0 1px 0 0 #ffeb3b !important;
+}
+
+button.colorPickerBtn, div.colorPickerBtn  {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    padding: 0;
+}
+
+span.colorPickerBtn   {
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    padding: 0;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.linebtn{
+    margin-left: 1px;
+    margin-bottom: 5px;
+    width: 45px;
+}

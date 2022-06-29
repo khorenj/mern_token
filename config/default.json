@@ -1,0 +1,8 @@
+{
+	"port":5001,
+	"jwtSecret":"secret1",
+	"jwtRefreshSecret":"secret2",
+	"mongoUri":"mongodb+srv://mern_admin:XZqkTJB1QYek4nlb@cluster0.miro2.mongodb.net/?retryWrites=true&w=majority",
+	"baseUrl": "http://localhost:5000",
+	"clientUrl": "http://localhost:3000"
+}
