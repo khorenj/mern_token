@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const tokenService = require('../services/token.service.js');
 
 module.exports = (req,res,next)=>{
     if(req === "OPTIONS")
@@ -14,9 +15,17 @@ module.exports = (req,res,next)=>{
            return res.status(401).json({message:"not authorized"});
         }
 
-        const decoded = jwt.verify(token, config.get("jwtSecret"));
-        req.user = decoded;
-        next();
+        const userData = tokenService.validateAccessToken(token);
+        if(userData)
+        {
+            req.user = userData;
+            next();
+        }
+        else
+        {
+            res.status(401).json({message:"token expired"});
+        }
+
 
     }
     catch (e)

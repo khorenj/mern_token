@@ -14,11 +14,14 @@ export const useAuth = () =>{
     const {loading, request} = useHttp();
 
     const login = useCallback((jwtToken,id,type)=>{
+
         setToken(jwtToken);
         setUserId(id);
         setUserType(type);
 
         localStorage.setItem(storageName, JSON.stringify({userId:id,token:jwtToken,userType:type}))
+
+
     },[]);
 
 
@@ -29,7 +32,7 @@ export const useAuth = () =>{
         setUserId(null);
         setUserType(null);
 
-         localStorage.removeItem(storageName);
+        localStorage.removeItem(storageName);
     },[]);
 
 

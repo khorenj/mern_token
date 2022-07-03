@@ -14,7 +14,6 @@ export const useRoutes = (isAuthenticated, userType) =>{
 	{
 		return(
 			<Routes>
-				{globalRoutes()}
 				<Route path="/users" exact element={<UsersPage />} />
 				<Route
 					path="*"
@@ -27,7 +26,6 @@ export const useRoutes = (isAuthenticated, userType) =>{
 
 	return (
 		<Routes>
-			{globalRoutes()}
 			<Route path="/" exact element={<AuthPage />} />
 			<Route
 				path="*"

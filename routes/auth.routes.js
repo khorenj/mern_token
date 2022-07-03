@@ -102,6 +102,42 @@ router.post('/login',[
 		const tokens = tokenService.generateToken({userId:user.id});
 		await tokenService.saveToken(user.id,tokens.refreshToken);
 
+		res.cookie('refreshToken', tokens.refreshToken, {maxAge: 60*1000, httpOnly: true})//30 * 24 * 60 * 60 * 1000
+
+		res.json({accessToken:tokens.accessToken,userId:user.id,userType:user.userType});
+
+
+	}catch(e)
+	{
+		console.log(e);
+		res.status(500).json({message:"something went wrong, try again"});
+	}
+})
+
+
+router.post('/refresh',async(req,res)=>{
+	try{
+		const {refreshToken} = req.cookies;
+
+		if (!refreshToken) {
+			return res.status(402).json({message:"Refresh not valid"});
+		}
+
+		const userData = tokenService.validateRefreshToken(refreshToken);
+
+		console.log("userData",userData);
+		const tokenFromDb = await tokenService.findToken(refreshToken);
+
+		console.log("tokenFromDb",tokenFromDb);
+		if (!userData || !tokenFromDb) {
+			return res.status(402).json({message:"Refresh not valid"});
+		}
+		const user = await User.findById(userData.userId);
+		const tokens = tokenService.generateToken({userId:user.id});
+
+		await tokenService.saveToken(user.id,tokens.refreshToken);
+
+		res.cookie('refreshToken', tokens.refreshToken, {maxAge: 60*1000, httpOnly: true})//30 * 24 * 60 * 60 * 1000
 		res.json({accessToken:tokens.accessToken,userId:user.id,userType:user.userType});
 
 
