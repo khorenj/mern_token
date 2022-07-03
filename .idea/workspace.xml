@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73d9a40e-24b9-4714-8daa-fbd42ff824c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/auth.hook.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/auth.hook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/http.hook.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/http.hook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/UserToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserToken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/token.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/token.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +42,7 @@
       <updated>1656776384933</updated>
       <workItem from="1656776388252" duration="234000" />
       <workItem from="1656849813234" duration="214000" />
-      <workItem from="1656850030592" duration="4707000" />
+      <workItem from="1656850030592" duration="5336000" />
     </task>
     <servers />
   </component>

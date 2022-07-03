@@ -38,6 +38,7 @@ export const useHttp = () => {
                     console.log("newAccessToken",data.accessToken);
 
                     auth.login(data.accessToken,data.userId,data.userType);
+                    auth.token = data.accessToken;
 
                     console.log("currentAcessToken",auth.token);
 
