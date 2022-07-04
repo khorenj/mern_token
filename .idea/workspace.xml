@@ -4,7 +4,6 @@
     <list default="true" id="73d9a40e-24b9-4714-8daa-fbd42ff824c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/http.hook.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/http.hook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/token.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/token.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
       <updated>1656776384933</updated>
       <workItem from="1656776388252" duration="234000" />
       <workItem from="1656849813234" duration="214000" />
-      <workItem from="1656850030592" duration="5336000" />
+      <workItem from="1656850030592" duration="6210000" />
     </task>
     <servers />
   </component>

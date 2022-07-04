@@ -41,8 +41,13 @@ export const useHttp = () => {
                     auth.token = data.accessToken;
 
                     console.log("currentAcessToken",auth.token);
-
-                    return await request(url, method, body, useToken);
+                    if(data.status !== 402)
+                    {
+                        return await request(url, method, body, useToken);
+                    }
+                    else {
+                        auth.logout();
+                    }
                 }
                 else if(response.status === 402)
                 {
