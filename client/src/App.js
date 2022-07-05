@@ -1,39 +1,46 @@
-import React from 'react';
-import {BrowserRouter as Router} from "react-router-dom";
-import {useRoutes} from "./routes";
-import {useAuth} from "./hooks/auth.hook";
-import {AuthContext} from "./context/auth.context";
-import {Navbar} from "./components/Navbar";
-import {Loader} from "./components/Loader";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useRoutes } from "./routes";
+import { useAuth } from "./hooks/auth.hook";
+import { AuthContext } from "./context/auth.context";
+import { Navbar } from "./components/Navbar";
+import { Loader } from "./components/Loader";
+import { CookiesProvider } from "react-cookie";
 
-import 'materialize-css';
+import "materialize-css";
 
 function App() {
-    const {token,login,logout,userId,ready,userType} = useAuth();
-    const isAuthenticated = !!token;
-    const routes = useRoutes(isAuthenticated,userType);
+  const { token, login, logout, userId, ready, userType } = useAuth();
+  const isAuthenticated = !!token;
+  const routes = useRoutes(isAuthenticated, userType);
 
-    if(!ready)
-    {
-        return <Loader />
-    }
+  if (!ready) {
+    return <Loader />;
+  }
 
-    return (
-        <AuthContext.Provider value={{
-            token,login,logout,userId,isAuthenticated,userType
-        }}>
-            <Router>
-                {isAuthenticated && <Navbar />}
-                <div className="container page-content">
-                    {routes}
-                    <div className="push"></div>
-                </div>
-                {/*<Footer />*/}
-            </Router>
-        </AuthContext.Provider>
-
-
-    );
+  return (
+    <CookiesProvider>
+      <AuthContext.Provider
+        value={{
+          token,
+          login,
+          logout,
+          userId,
+          isAuthenticated,
+          userType,
+        }}
+      >
+        <Router>
+          {isAuthenticated && <Navbar />}
+          <div className="container page-content">
+            {routes}
+            <div className="push"></div>
+          </div>
+          {/*<Footer />*/}
+        </Router>
+      </AuthContext.Provider>
+    </CookiesProvider>
+  );
 }
 
 export default App;
